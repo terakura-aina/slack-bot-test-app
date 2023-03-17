@@ -80,7 +80,7 @@ app.command("/registar", async ({ ack, body, client, logger }) => {
           },
           {
             type: 'input',
-            block_id: 'date_of_barth',
+            block_id: 'birthday',
             element: {
               type: 'datepicker',
               placeholder: {
@@ -125,11 +125,11 @@ app.view('registar-test', async ({ ack, body, view, client, logger }) => {
 
   const fullName = view['state']['values']['full_name']['plain_text_input-action']['value'];
   const mailAddress = view['state']['values']['mail_address']['email_text_input-action']['value'];
-  const dateOfBarth = view['state']['values']['date_of_barth']['datepicker-action']['selected_date'];
+  const birthday = view['state']['values']['birthday']['datepicker-action']['selected_date'];
   const channel = view['state']['values']['channel_to_notify']['_']['selected_conversation'];
   console.log("fullName:",fullName)
   console.log("mailAddress:",mailAddress)
-  console.log("dateOfBarth:",dateOfBarth)
+  console.log("birthday:",birthday)
   console.log("channel:",channel)
   const channelId = body['response_urls'][0]['channel_id']
 
